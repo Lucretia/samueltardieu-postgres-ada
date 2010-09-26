@@ -1,0 +1,13 @@
+with "../common/common";
+
+project PGAda is
+   for Source_Dirs use ("source");
+   for Object_Dir use "build";
+   for Exec_Dir use ".";
+
+   package Compiler renames Common.Compiler;
+
+   package Linker is
+      for Linker_Options use ("-R/usr/postgres/8.3/lib", "-lpq", "-L/lib", "-R/lib", "-lcrypto");
+   end Linker;
+end PGAda;
