@@ -1,0 +1,12 @@
+with "../../common/common";
+with "../pgada";
+
+project Connect is
+   for Source_Dirs use ("source");
+   for Object_Dir use "build";
+   for Exec_Dir use ".";
+   for Main use ("connect.adb");
+
+   package Builder renames Common.Builder;
+   package Compiler renames Common.Compiler;
+end Connect;
